@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Crear Persona</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+    </head>
+    <body>
+        <div class="container">
+            <h2 class="text-center">Guardar Persona</h2>
+            <form action="#" th:action="@{/guardar}" th:object="${persona}" method="post">
+                <div class="form-group">
+                    <label for="nombre">Primer nombre</label>
+                    <input type="text" id="nombre" th:field="*{wilmer}" name="nombre">
+                </div>
+                <input type="hidden" th:field="*{id}" name="id" id="id">
+                <div class="form-group">
+                    <label for="apellido">Segundo nombre</label>
+                    <input type="text" id="apellido" th:field="*{david}" name="apellido">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Primer apellido</label>
+                    <input type="text" id="direccion" th:field="*{castellanos}" name="direccion">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Segundo apellido</label>
+                    <input type="text" id="telefono" th:field="*{miranda}" name="telefono">
+                </div>
+                
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+    </body>
+</html>

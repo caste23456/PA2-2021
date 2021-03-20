@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Spring Boot</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <br>
+            
+                
+            <div>
+                <a class="font-weight-bold text-center mg-5 " href="/crear">Agregar Persona</a>
+            </div>
+            <h2 th:if="${lista.isEmpty()}" class="text-center">No hay personas</h2>
+            <div  th:if="${!lista.isEmpty()}">
+                <table  class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th>Primer nombre</th>
+                            <th>Segundo nombre</th>
+                            <th>Primer apellido</th>
+                            <th>Segundo apellido</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="persona : ${lista}">
+                            <td th:text="${persona.wilmer}">
+                            <td th:text="${persona.david}">
+                             <td th:text="${persona.castellanos}">
+                            <td th:text="${persona.miranda}">
+                            <td><a class="btn btn-primary" th:href="@{/actualizar/{id}(id=${persona.id})}">Editar</a></td>
+                            <td><a class="btn btn-danger" th:href="@{/eliminar/{id}(id=${persona.id})}">Eliminar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
+
+        
+    </body>
+</html>
